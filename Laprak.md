@@ -153,6 +153,9 @@ int main() {
 //Contoh tipe data primitif umum termasuk integer, floating-point, character, dan boolean.
 //Mereka digunakan dalam operasi matematika, logika, dan manipulasi data yang sederhana.
 ```
+#### Output:
+![Screenshot Output Unguided 1](output-unguided1.png)
+
 
 ### 2. [Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya]
 ```C++
@@ -216,6 +219,8 @@ int main() {
 //Mendukung pewarisan tetapi hanya dalam konteks pewarisan gaya C++ (gaya C), di mana anggota diwariskan sebagai publik secara default.
 //Struct sering digunakan untuk kompatibilitas mundur dengan C, memungkinkan penggunaan kode C dalam program C++.
 ```
+#### Output:
+![Screenshot Output Unguided 2](output-unguided2.png)
 
 ### 3. [Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map.]
 
@@ -270,18 +275,18 @@ int main() {
 //Merupakan struktur data yang menyimpan pasangan kunci-nilai. Kunci dan nilai ini bisa berupa tipe data apa pun. 
 //Dalam kode yang saya buat nilaiMap adalah map yang kuncinya adalah string dan nilainya adalah integer. saya mengunakan nilai yang mengakses dalam map menggunakan kunci. 
 //Diatas saya membuat nilaiMap["Kumbang"] mengakses nilai yang terkait dengan kunci "Kumbang".
+```
 
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
-
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
-
-#### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+![Screenshot Output Unguided 3](output-unguided3.png)
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Tipe data primitif adalah tipe data dasar yang digunakan untuk menyimpan nilai tunggal, seperti angka, karakter, atau boolean. Mereka memiliki ukuran yang tetap dan operasi yang sederhana. Contoh tipe data primitif umum termasuk integer, floating-point, character, dan boolean.
+Kelas digunakan untuk membuat tipe data yang kompleks dengan menyatukan data (variabel) dan perilaku (metode) ke dalam satu entitas. Kelas mempromosikan konsep enkapsulasi, abstraksi, pewarisan, dan polimorfisme.
+Struct adalah tipe data yang digunakan untuk membuat struktur data sederhana dengan anggota yang dapat diakses secara publik secara default. Dapat digunakan untuk mengelompokkan data terkait bersama-sama.
+Array merupakan struktur data yang digunakan untuk menyimpan elemen-elemen yang bertipe data sama dan tidak bisa menyimpan tipe data yang beda. Di dalam kode, elemen-elemen array tersebut dapat diakses menggunakan indeks.
+Map merupakan struktur data yang menyimpan pasangan kunci-nilai, dimana kunci dan nilai ini bisa berupa tipe data apa pun. Di dalam kode, nilaiMap adalah map yang kuncinya adalah string dan nilainya adalah integer. Nilai yang terkait dengan kunci dapat diakses menggunakan kunci.
 
 ## Referensi
 [1] https://www.academia.edu/31473936/LAPORAN_PRAKTIKUM_1_ALGORITMA_STRUKTUR_DATA_TIPE_DATA_PRIMITIF_TIPE_DATA_ABSTRAK_DAN_TIPE_DATA_KOLEKSI
