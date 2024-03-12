@@ -23,7 +23,7 @@ int main() {
     return 0;
 }
 
-//Kesimpulan
+
 //Tipe data primitif adalah tipe data dasar yang telah ditentukan oleh bahasa pemrograman.
 //Mereka digunakan untuk menyimpan nilai tunggal seperti angka, karakter, atau nilai boolean.
 //Tipe data primitif memiliki ukuran yang tetap dan operasi yang sederhana. 

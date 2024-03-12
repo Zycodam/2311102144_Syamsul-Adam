@@ -5,7 +5,7 @@
 using namespace std;
 int main() {
 
-Deklarasi fungsi array
+//Deklarasi fungsi array
 int nilai[5];
 nilai[0] = 23;
 nilai[1] = 50;
