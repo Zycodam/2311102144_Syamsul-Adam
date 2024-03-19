@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/VSCode/2311102144_Syamsul-Adam/pertemuan1",
-      "program": "d:/VSCode/2311102144_Syamsul-Adam/pertemuan1/build/Debug/outDebug",
+      "cwd": "d:/VSCode/2311102144_Syamsul-Adam/pertemuan2",
+      "program": "d:/VSCode/2311102144_Syamsul-Adam/pertemuan2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
