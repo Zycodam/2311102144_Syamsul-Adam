@@ -735,8 +735,8 @@ int main() {
 }
 ```
 #### Output:
-![Screenshot Output Unguided 1](Output-unguided1.png)
-![Screenshot Output Unguided 1](Output-unguided1(2).png)
+![Screenshot Output Unguided 1](output-unguided1.png)
+![Screenshot Output Unguided 1](output-unguided1(2).png)
 
 Program ini juga menggunakan fungsi main untuk melakukan operasi terhadap linked list. Fungsi main memanggil semua fungsi yang digunakan untuk menangani linked list. Program ini akan menampilkan output dari operasi yang dilakukan terhadap linked list.
 
@@ -757,7 +757,6 @@ Toko Skincare Purwokerto
 8.	Exit
 Pada menu 7, tampilan akhirnya akan menjadi seperti dibawah
 ini :
-![Screenshot Soal Unguided 2](Soal_unguided-2_Agnes(2).png)]
 
 ```C++
 #include <iostream>
@@ -1023,8 +1022,8 @@ int main() {
 }
 ```
 #### Output:
-![Screenshot Output Unguided 2](Output-unguided2.png)
-![Screenshot Output Unguided 2](Output-unguided2(2).png)
+![Screenshot Output Unguided 2](output-unguided2.png)
+![Screenshot Output Unguided 2](output-unguided2(2).png)
 
 Program ini menggunakan daftar linked list untuk menyimpan nama dan harga produk. Pengguna dapat melakukan berbagai operasi seperti menambah produk, menghapus produk, memperbarui detail produk, memasukkan produk pada posisi tertentu, dan menghapus produk pada posisi tertentu. Program ini menampilkan daftar produk dengan harga masing-masing, dan pengguna dapat memilih opsi menu menggunakan pernyataan switch-case. Program berjalan berulang-ulang hingga pengguna memilih opsi keluar.
 
