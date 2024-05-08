@@ -218,7 +218,7 @@ int main() {
 Program ini adalah aplikasi untuk memeriksa apakah suatu kalimat adalah polindrom atau tidak. Polindrom adalah kalimat yang memiliki sifat bahwa kalimat tersebut sama ketika dibaca dari awal hingga akhir dan juga ketika dibaca dari akhir hingga awal. Program ini menggunakan stack untuk memeriksa kalimat dan menampilkan hasilnya.
 
 #### Output:
-![Screenshot Output Unguided 1](outputunguided1.png)
+![Screenshot Output Unguided1](outputunguided1.png)
 
 
 ## Unguided 2
@@ -266,7 +266,7 @@ int main() {
 
 ```
 #### Output:
-![Screenshot Output Unguided 2](outputunguided2.png)
+![Screenshot Output Unguided2](outputunguided2.png)
 
 
 Program ini adalah aplikasi untuk memeriksa apakah suatu kalimat adalah palindrome atau tidak. Palindrome adalah kalimat yang memiliki sifat bahwa kalimat tersebut sama ketika dibaca dari awal hingga akhir dan juga ketika dibaca dari akhir hingga awal. Program ini menggunakan stack untuk menuangkan kalimat dan kemudian membandingkan kalimat asli dengan kalimat terbalik untuk menentukan apakah kalimat tersebut palindrome atau tidak.
