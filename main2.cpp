@@ -1,8 +1,7 @@
-//Syamsul Adam 2311102144
 #include <iostream>
 using namespace std;
-
-const int maksimalQueue = 5;
+//2311102144
+const int maksimalQueue = 10;
 int front = 0;
 int back = 0;
 string queueTeller[maksimalQueue];
@@ -61,18 +60,19 @@ void viewQueue() {
 
 int main() {
     enqueueAntrian("Andi");
-    enqueueAntrian("Maya");
-    enqueueAntrian("Putri");
+    enqueueAntrian("Thomas");
+    enqueueAntrian("Bryan");
+    enqueueAntrian("Dicka");
+    enqueueAntrian("Adam"); // antrian ke 5
+    enqueueAntrian("Anggraini");
+    enqueueAntrian("Rafit");
+    enqueueAntrian("Udin");
+    enqueueAntrian("Vina");
+    enqueueAntrian("Rahmadhani");
     viewQueue();
     cout << "Jumlah antrian = " << countQueue() << endl;
     dequeueAntrian();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    clearQueue();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
     return 0;
 }
 
-
-//Program ini mengimplementasikan struktur data antrian sederhana untuk mengelola antrian teller. Program ini memungkinkan pengguna untuk menambahkan pelanggan ke antrian (enqueue), menghapus pelanggan dari antrian (dequeue), melihat antrian saat ini, dan menghapus antrian. Program ini juga memeriksa kondisi antrian penuh dan kosong.
+//Program ini mengimplementasikan struktur data antrian sederhana untuk mengelola antrian teller. Program ini memungkinkan pengguna untuk menambahkan pelanggan ke antrian (enqueue), menghapus pelanggan dari antrian (dequeue), melihat antrian saat ini, dan mengosongkan antrian. Program juga memeriksa kondisi antrian penuh dan kosong.
