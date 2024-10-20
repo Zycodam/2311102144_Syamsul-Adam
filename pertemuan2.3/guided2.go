@@ -1,26 +1,47 @@
 package main
 
-import "fmt"
-
-// Fungsi untuk menghitung luas persegi
-func hitungLuas(sisi float64) float64 {
-    return sisi * sisi
-}
-
-// Fungsi untuk menghitung keliling persegi
-func hitungKeliling(sisi float64) float64 {
-    return 4 * sisi
-}
-
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 func main() {
-    var sisi float64
+	// Urutan warna yang benar
+	correctOrder := []string{"merah", "kuning", "hijau", "ungu"}
 
-    fmt.Print("Masukkan panjang sisi persegi: ")
-    fmt.Scan(&sisi)
+	// Membaca input untuk 5 percobaan
+	reader := bufio.NewReader(os.Stdin)
+	success := true
 
-    luas := hitungLuas(sisi)
-    keliling := hitungKeliling(sisi)
+	for i := 1; i <= 5; i++ {
+		fmt.Printf("Percobaan %d: ", i)
 
-    fmt.Printf("Luas persegi: %.2f\n", luas)
-    fmt.Printf("Keliling persegi: %.2f\n", keliling)
+		// Membaca input dari pengguna
+		input, _ := reader.ReadString('\n')
+		input = strings.TrimSpace(input)
+
+		// Memisahkan input berdasarkan spasi
+		colors := strings.Split(input, " ")
+
+		// Mengecek apakah urutan warna sesuai
+		for j := 0; j < 4; j++ {
+			if colors[j] != correctOrder[j] {
+				success = false
+				break
+			}
+		}
+
+		// Jika ada percobaan yang tidak sesuai, keluar dari loop
+		if !success {
+			break
+		}
+	}
+
+	// Menampilkan hasil
+	if success {
+		fmt.Println("BERHASIL: true")
+	} else {
+		fmt.Println("BERHASIL: false")
+	}
 }

@@ -87,7 +87,7 @@ func permutasi(n, r int) int {
 	return faktorial(n) / faktorial(n-r)
 }
 ```
-## Output: 
+## Output: ![Screenshot Output guided1 ](Screenshot 2024-10-13 165349.png)
 
 Program ini adalah program yang menghitung nilai permutasi dari dua bilangan bulat yang diinput oleh pengguna. Program ini menggunakan fungsi rekursif untuk menghitung nilai faktorial dan kemudian menghitung nilai permutasi menggunakan rumus permutasi. Hasil permutasi kemudian dicetak ke output.
 

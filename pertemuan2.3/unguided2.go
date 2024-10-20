@@ -4,35 +4,38 @@ import (
 	"fmt"
 )
 
-func f(x int) int {
-	return x * x
-}
-
-func g(x int) int {
-	return x - 2
-}
-
-func h(x int) int {
-	return x + 1
-}
-
-func fogoh(x int) int {
-	return f(g(h(x)))
-}
-
-func gohof(x int) int {
-	return g(h(f(x)))
-}
-
-func hofog(x int) int {
-	return h(f(g(x)))
-}
-
 func main() {
-	var a, b, c int
-	fmt.Scan(&a, &b, &c)
+	var beratKiri, beratKanan float64
 
-	fmt.Println(fogoh(a))
-	fmt.Println(gohof(b))
-	fmt.Println(hofog(c))
+	for {
+		// Menerima input berat kedua kantong dalam satu baris
+		fmt.Print("Masukan berat belanjaan di kedua kantong: ")
+		fmt.Scan(&beratKiri, &beratKanan)
+
+		// Cek jika salah satu kantong memiliki berat negatif
+		if beratKiri < 0 || beratKanan < 0 {
+			fmt.Println("Proses selesai.")
+			break
+		}
+
+		// Cek jika total berat kedua kantong melebihi 150 kg
+		totalBerat := beratKiri + beratKanan
+		if totalBerat > 150 {
+			fmt.Println("Proses selesai.")
+			break
+		}
+
+		// Hitung selisih berat antara kantong kiri dan kanan
+		selisih := beratKiri - beratKanan
+		if selisih < 0 {
+			selisih = -selisih
+		}
+
+		// Menampilkan hasil apakah sepeda motor akan oleng atau tidak
+		if selisih >= 9 {
+			fmt.Println("Sepeda motor Pak Andi akan oleng: true")
+		} else {
+			fmt.Println("Sepeda motor Pak Andi akan oleng: false")
+		}
+	}
 }
