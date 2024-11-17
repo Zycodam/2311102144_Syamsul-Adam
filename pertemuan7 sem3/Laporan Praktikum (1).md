@@ -6,7 +6,7 @@
     <img src="https://github.com/user-attachments/assets/3ccfed0b-72d1-4349-ac08-c4dce379c827" alt="Gambar">
 </p>
  <h3  align="center" >Disusun Oleh : </h3>
-<p align="center">Amanda Windhu Gustyas - 2311102121</p>
+<p align="center">Syamsul Adam - 2311102144</p>
 <p align="center">IF-11-05</p>
  <h3 <p align="center" >Dosen Pengampu : </h3> </p>
  <p align="center">Arif Amrulloh, S.Kom., M.Kom.</p>
@@ -90,14 +90,13 @@ func main() {
 	fmt.Printf("Lama Parkir : %d jam %d menit %d detik", durasi.jam, durasi.menit, durasi.detik)
 }
 ```
-## Output: ![image](https://github.com/user-attachments/assets/a2c3298e-bffc-45dd-a9d1-2a809e2cd487)
+## Output: ![Screenshot 2024-11-17 215918](https://github.com/user-attachments/assets/d9bc6792-d7b6-466a-82e6-7d76e67dc6cf)
 
-Program ini dirancang untuk menghitung durasi waktu parkir kendaraan berdasarkan waktu datang dan waktu pulang. Data waktu datang dan pulang dimasukkan dalam format jam, menit, dan detik. Program mengonversi kedua waktu tersebut menjadi detik untuk mempermudah perhitungan selisihnya. Setelah mendapatkan selisih waktu dalam bentuk detik, program mengubahnya kembali menjadi format jam, menit, dan detik yang mudah dipahami. Hasil akhirnya ditampilkan sebagai durasi parkir dalam format yang jelas dan terstruktur.
 
+Program ini dirancang untuk menghitung durasi waktu parkir berdasarkan waktu masuk dan waktu keluar. Program ini menggunakan struktur data struct untuk menyimpan informasi jam, menit, dan detik, serta melakukan konversi waktu ke dalam detik untuk memudahkan perhitungan durasi.
 ### 2. Program Slice
 
 ```go
-//Guided 2 - Slice
 package main
 
 import (
@@ -134,14 +133,14 @@ func main() {
 	fmt.Println("Daftar Teman:", daftarTeman)
 }
 ```
-## Output: ![image](https://github.com/user-attachments/assets/ce78a6fa-3263-449a-82f0-bd6acb183a0a)
+## Output: ![Screenshot 2024-11-17 220013](https://github.com/user-attachments/assets/4bfc73a7-1bd0-4b31-81db-eb2c5210fd38)
 
-Program ini menambahkan nama baru ke daftar teman, tapi hanya jika belum ada di dalamnya. Nama baru dicek menggunakan fungsi sudahAda. Jika belum ada, nama ditambahkan; jika sudah ada, program memberi pemberitahuan. Hasil akhirnya adalah daftar teman yang diperbarui.
 
+
+Program ini  dibuat berbasis teks yang sederhana, pengguna dapat dengan mudah menambah nama ke dalam daftar teman sambil memastikan tidak ada yang double.
 ### 2. Program Map
 
 ```go
-// Guided 2 - Map
 package main
 
 import (
@@ -170,9 +169,11 @@ func main() {
 	}
 }
 ```
-## Output: ![image](https://github.com/user-attachments/assets/f6c3009d-704e-4561-a00e-3575eb2b72e3)
+## Output: ![Screenshot 2024-11-17 220034](https://github.com/user-attachments/assets/9841702f-c8e5-4277-9684-3bea7b2d56ce)
 
-Program ini menyimpan daftar harga buah menggunakan map dengan nama buah sebagai kunci dan harga sebagai nilai. Program pertama-tama menampilkan harga semua buah yang ada dalam map. Kemudian, program mencari harga buah Mangga dan menampilkannya. Jika buah Mangga tidak ada, program akan memberi tahu bahwa buah tersebut tidak ditemukan dalam daftar.
+
+
+Program ini dibuat untuk menyimpan dan mengelola data. Dengan antarmuka berbasis teks yang sederhana, pengguna dapat dengan mudah melihat harga buah yang telah ditentukan dan melakukan pencarian harga untuk buah tertentu.
 
 ## III. UNGUIDED
 
@@ -186,61 +187,67 @@ import (
 	"math"
 )
 
-// Struct untuk merepresentasikan titik
+// Definisi tipe Titik dan Lingkaran
 type Titik struct {
 	x, y int
 }
 
-// Struct untuk merepresentasikan lingkaran
 type Lingkaran struct {
-	titikPusat Titik
-	radius     int
+	center Titik
+	radius int
 }
 
 // Fungsi untuk menghitung jarak antara dua titik
 func jarak(p, q Titik) float64 {
-	return math.Sqrt(math.Pow(float64(p.x-q.x), 2) + math.Pow(float64(p.y-q.y), 2))
+	return math.Sqrt(float64((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y)))
 }
 
-// Fungsi untuk mengecek apakah sebuah titik berada di dalam lingkaran
+// Fungsi untuk menentukan apakah titik berada di dalam lingkaran
 func didalam(c Lingkaran, p Titik) bool {
-	return jarak(c.titikPusat, p) <= float64(c.radius)
+	return jarak(c.center, p) <= float64(c.radius)
 }
 
 func main() {
-	// Input lingkaran 1 dan 2
+	// Input lingkaran pertama
 	var cx1, cy1, r1 int
-	var cx2, cy2, r2 int
-	fmt.Scan(&cx1, &cy1, &r1) // Input lingkaran 1
-	fmt.Scan(&cx2, &cy2, &r2) // Input lingkaran 2
-
+	fmt.Println("Masukkan koordinat titik lingkaran 1:")
+	fmt.Scan(&cx1, &cy1, &r1)
 	lingkaran1 := Lingkaran{Titik{cx1, cy1}, r1}
+
+	// Input lingkaran kedua
+	var cx2, cy2, r2 int
+	fmt.Println("Masukkan koordinat titik  2:")
+	fmt.Scan(&cx2, &cy2, &r2)
 	lingkaran2 := Lingkaran{Titik{cx2, cy2}, r2}
 
-	// Input titik sembarang
-	var x, y int
-	fmt.Scan(&x, &y)
-	titik := Titik{x, y}
+	// Input titik yang akan dicek
+	var px, py int
+	fmt.Println("Masukkan koordinat titik (px, py):")
+	fmt.Scan(&px, &py)
+	titik := Titik{px, py}
 
-	// Menentukan posisi titik
-	inLingkaran1 := didalam(lingkaran1, titik)
-	inLingkaran2 := didalam(lingkaran2, titik)
+	// Mengevaluasi posisi titik
+	diDalamLingkaran1 := didalam(lingkaran1, titik)
+	diDalamLingkaran2 := didalam(lingkaran2, titik)
 
-	if inLingkaran1 && inLingkaran2 {
+	// Output hasil
+	if diDalamLingkaran1 && diDalamLingkaran2 {
 		fmt.Println("Titik di dalam lingkaran 1 dan 2")
-	} else if inLingkaran1 {
+	} else if diDalamLingkaran1 {
 		fmt.Println("Titik di dalam lingkaran 1")
-	} else if inLingkaran2 {
+	} else if diDalamLingkaran2 {
 		fmt.Println("Titik di dalam lingkaran 2")
 	} else {
 		fmt.Println("Titik di luar lingkaran 1 dan 2")
 	}
 }
 
-```
-## Output: ![image](https://github.com/user-attachments/assets/d976d4dc-281b-4bcf-a44d-39d2515ddda5)
 
-Program ini berfungsi untuk menentukan letak sebuah titik sembarang terhadap dua lingkaran. Input yang diperlukan adalah koordinat pusat dan jari-jari kedua lingkaran, serta koordinat titik yang akan diperiksa. Program akan menghitung jarak titik tersebut ke pusat masing-masing lingkaran dengan rumus Euclidean, lalu membandingkannya dengan jari-jari lingkaran. Hasil perbandingan tersebut akan digunakan untuk menentukan apakah titik berada di dalam lingkaran pertama, lingkaran kedua, kedua lingkaran, atau justru di luar keduanya. Hasil akhirnya kemudian ditampilkan.
+```
+## Output: ![Screenshot 2024-11-17 220328](https://github.com/user-attachments/assets/d11fdc57-e4ea-4a04-af4b-00862d05a34b)
+
+
+program di buat apakah suatu titik berada di dalam dua lingkaran yang didefinisikan oleh koordinat pusat dan jari-jari masing-masing. Dengan kesempatan menggunakan tipe data struct untuk titik dan lingkaran, program akan secara otomatis menghitung jarak antara pusat poros lingkaran dan hanya menggunakanjarak Euclidean. Apakah jarak antara titik ini kurang dari faktor jari-jari dari setiap lingkaran
 
 ### 2. Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilai. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa informasi berikut:<br/>
 ### a. Menampilkan keseluruhan isi dari array.<br/>
@@ -261,7 +268,6 @@ import (
 )
 
 func main() {
-	// Input jumlah elemen array
 	var n int
 	fmt.Print("Masukkan jumlah elemen array: ")
 	fmt.Scan(&n)
@@ -273,61 +279,115 @@ func main() {
 		fmt.Scan(&array[i])
 	}
 
-	// a. Menampilkan keseluruhan isi array
+	// a. Menampilkan keseluruhan isi aray
+	displayFullArray(array)
+
+	// b. Menampilkan elemen dengan indeks ganjl
+	displayOddIndices(array)
+
+	// c. Menampilkan elemen dengan indeks genap
+	displayEvenIndices(array)
+
+	// d. Menampilkan elemen dengan indeks kelipatan bilangan x
+	displayMultipleIndices(array)
+
+	// e. Menghapus elemen array pada indeks tertentu
+	array = deleteElement(array)
+
+	// f. Menampilkan rata-rata dari elemen array
+	displayAverage(array)
+
+	// g. Menampilkan standar deviasi dari elemen array
+	displayStdDev(array)
+
+	// h. Menampilkan frekuensi elemen dalam array
+	displayFrequency(array)
+}
+
+// a. Menampilkan keseluruhan isi array
+func displayFullArray(array []int) {
 	fmt.Println("a. Keseluruhan isi array:", array)
+}
 
-	// b. Menampilkan elemen-elemen array dengan indeks ganjil saja
+// b. Menampilkan elemen-elemen array dengan indeks ganjil
+func displayOddIndices(array []int) {
 	fmt.Print("b. Elemen dengan indeks ganjil: ")
-	for i := 1; i < n; i += 2 {
+	for i := 0; i < len(array); i += 2 {
 		fmt.Print(array[i], " ")
 	}
 	fmt.Println()
+}
 
-	// c. Menampilkan elemen-elemen array dengan indeks genap saja
+// c. Menampilkan elemen-elemen array dengan indeks genap
+func displayEvenIndices(array []int) {
 	fmt.Print("c. Elemen dengan indeks genap: ")
-	for i := 0; i < n; i += 2 {
+	for i := 1; i < len(array); i += 2 {
 		fmt.Print(array[i], " ")
 	}
 	fmt.Println()
+}
 
-	// d. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x
+// d. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x
+func displayMultipleIndices(array []int) {
 	var x int
 	fmt.Print("Masukkan nilai x untuk indeks kelipatan: ")
 	fmt.Scan(&x)
-	fmt.Print("d. Elemen dengan indeks kelipatan", x, ": ")
-	for i := x; i < n; i += x {
+
+	if x <= 0 {
+		fmt.Println("Nilai x harus lebih besar dari 0!")
+		return
+	}
+
+	fmt.Printf("d. Elemen dengan indeks kelipatan %d: ", x)
+	for i := x; i < len(array); i += x {
 		fmt.Print(array[i], " ")
 	}
 	fmt.Println()
+}
 
-	// e. Menghapus elemen array pada indeks tertentu
+// e. Menghapus elemen array pada indeks tertentu
+func deleteElement(array []int) []int {
 	var delIndex int
 	fmt.Print("Masukkan indeks elemen yang akan dihapus: ")
 	fmt.Scan(&delIndex)
-	if delIndex >= 0 && delIndex < n {
+// 
+	if delIndex >= 0 && delIndex < len(array) {
 		array = append(array[:delIndex], array[delIndex+1:]...)
 		fmt.Println("e. Array setelah penghapusan elemen:", array)
 	} else {
 		fmt.Println("Indeks tidak valid!")
 	}
+	return array
+}
 
-	// f. Menampilkan rata-rata dari elemen array
+// f. Menampilkan rata-rata elemen array
+func displayAverage(array []int) {
 	sum := 0
 	for _, val := range array {
 		sum += val
 	}
 	avg := float64(sum) / float64(len(array))
 	fmt.Printf("f. Rata-rata elemen array: %.2f\n", avg)
+}
 
-	// g. Menampilkan standar deviasi dari elemen array
+// g. Menampilkan standar deviasi elemen array
+func displayStdDev(array []int) {
+	sum := 0
+	for _, val := range array {
+		sum += val
+	}
+	avg := float64(sum) / float64(len(array))
+
 	var variance float64
 	for _, val := range array {
 		variance += math.Pow(float64(val)-avg, 2)
 	}
 	stdDev := math.Sqrt(variance / float64(len(array)))
 	fmt.Printf("g. Standar deviasi elemen array: %.2f\n", stdDev)
+}
 
-	// h. Menampilkan frekuensi dari setiap bilangan dalam array
+// h. Menampilkan frekuensi elemen dalam array
+func displayFrequency(array []int) {
 	freq := make(map[int]int)
 	for _, val := range array {
 		freq[val]++
@@ -337,10 +397,14 @@ func main() {
 		fmt.Printf("   %d: %d kali\n", key, val)
 	}
 }
-```
-## Output: ![image](https://github.com/user-attachments/assets/3c92f1e8-00e6-411f-a051-6fccdcd50f41)
 
-Program ini mengolah array dengan beberapa operasi, seperti menampilkan seluruh elemen, elemen dengan indeks ganjil/genap, elemen dengan indeks kelipatan tertentu, menghapus elemen, menghitung rata-rata dan standar deviasi, serta menghitung frekuensi tiap elemen dalam array. Pengguna bisa memasukkan nilai array dan indeks yang ingin dimanipulasi.
+```
+## Output: ![Screenshot 2024-11-17 203200](https://github.com/user-attachments/assets/a6b4babc-03ae-46cf-b6c6-75ee5c79cf7f)
+
+
+
+Program ini dirancang untuk melakukan berbagai operasi seperti pada soal ada array bilangan bulat, seperti menampilkan indeks ganjil, genap, atau kelipatan tertentu, menghitung rata-rata, menghapus elemen pada indeks tertentu, serta menghitung frekuensi kemunculan elemen.
+
 
 ### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga. Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja. Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.   
 
@@ -348,77 +412,59 @@ Program ini mengolah array dengan beberapa operasi, seperti menampilkan seluruh 
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
 )
 
 func main() {
 	var klubA, klubB string
 	var pemenang []string
 
-	// Input nama klub
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Print("Klub A : ")
-	scanner.Scan()
-	klubA = scanner.Text()
+	// Meminta input nama klub
+	fmt.Print("Klub A: ")
+	fmt.Scanln(&klubA)
 
-	fmt.Print("Klub B : ")
-	scanner.Scan()
-	klubB = scanner.Text()
+	fmt.Print("Klub B: ")
+	fmt.Scanln(&klubB)
 
-	// Proses input skor
+	// Memasukkan skor pertandingan
 	for i := 1; ; i++ {
+		var skorA, skorB int
 		fmt.Printf("Pertandingan %d : ", i)
-		scanner.Scan()
-		skorInput := scanner.Text()
-		skor := strings.Split(skorInput, " ")
+		_, err := fmt.Scanln(&skorA, &skorB)
 
-		if len(skor) != 2 {
-			fmt.Println("Input tidak valid, masukkan 2 skor dipisahkan dengan spasi.")
-			break
+		// Validasi input
+		if err != nil {
+			fmt.Println("Input tidak valid. Coba lagi.")
+			i-- // Ulangi iterasi ini
+			continue
 		}
-
-		// Konversi skor menjadi integer
-		skorA, errA := strconv.Atoi(skor[0])
-		skorB, errB := strconv.Atoi(skor[1])
-
-		if errA != nil || errB != nil {
-			fmt.Println("Input skor tidak valid.")
-			break
-		}
-
-		// Hentikan jika skor negatif
 		if skorA < 0 || skorB < 0 {
-			fmt.Println("Pertandingan selesai")
-			break
+			break // Akhiri loop jika skor negatif
 		}
 
 		// Menentukan pemenang
 		if skorA > skorB {
 			pemenang = append(pemenang, klubA)
-			fmt.Printf("Hasil %d : %s\n", i, klubA)
-		} else if skorB > skorA {
+		} else if skorA < skorB {
 			pemenang = append(pemenang, klubB)
-			fmt.Printf("Hasil %d : %s\n", i, klubB)
 		} else {
-			pemenang = append(pemenang, "Draw")
-			fmt.Printf("Hasil %d : Draw\n", i)
+			pemenang = append(pemenang, "Seri")
 		}
 	}
 
-	// Menampilkan hasil pemenang
-	fmt.Println("\nDaftar pemenang pertandingan:")
-	for _, hasil := range pemenang {
-		fmt.Println(hasil)
+	// Menampilkan hasil pertandingan
+	fmt.Println("\nHasil Pertandingan:")
+	for i, p := range pemenang {
+		fmt.Printf("Hasil %d: %s\n", i+1, p)
 	}
+	fmt.Println("Pertandingan selesai.")
 }
-```
-## Output: ![image](https://github.com/user-attachments/assets/345093f0-57cf-43fc-a3db-a8326bb0c579)
 
-Program ini meminta input nama dua klub dan skor pertandingan secara berulang. Program akan menentukan pemenang setiap pertandingan, mencatat hasilnya, dan berhenti jika skor negatif dimasukkan. Di akhir, daftar pemenang ditampilkan.
+```
+## Output: ![Screenshot 2024-11-17 210420](https://github.com/user-attachments/assets/cb4794ab-9e60-4d6e-a893-7788054d1488)
+
+
+Program ini bertujuan untuk mencatat hasil beberapa pertandingan antara dua klub sepak bola. Puser memasukkan nama kedua klub, lalu memasukkan skor pertandingan secara berulang hingga salah satu skor negatif dimasukkan. Program mencatat pemenang dari setiap pertandingan dan menampilkan hasil akhirnya.
 
 ### 4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan isi array dan memeriksa apakah membentuk palindrom.
 
@@ -431,47 +477,52 @@ import (
 
 const NMAX int = 127
 
-type tabel struct {
-	tab [NMAX]rune
-	m   int
-}
+type tabel [NMAX]rune
 
-// Fungsi untuk mengisi array dari input
+// Fungsi untuk mengisi array dengan karakter dari input satu baris
 func isiArray(t *tabel, n *int) {
-	var ch rune
-	fmt.Println("Masukkan karakter (akhiri dengan '.'): ")
+	var input string
 
-	for {
-		// Input karakter
-		fmt.Scanf("%c\n", &ch)
-		if ch == '.' || *n >= NMAX {
+	fmt.Println("Masukkan teks : ")
+	fmt.Scanln(&input)
+
+	*n = 0
+	for _, char := range input {
+		if char == '.' {
 			break
 		}
-		t.tab[*n] = ch
+
+		// Masukkan karakter ke dalam array
+		t[*n] = char
 		*n++
+
+		// Hentikan jika mencapai batas maksimum NMAX
+		if *n >= NMAX {
+			fmt.Println("Batas maksimum tercapai.")
+			break
+		}
 	}
-	t.m = *n
 }
 
 // Fungsi untuk mencetak isi array
 func cetakArray(t tabel, n int) {
 	for i := 0; i < n; i++ {
-		fmt.Printf("%c", t.tab[i])
+		fmt.Printf("%c", t[i])
 	}
 	fmt.Println()
 }
 
-// Fungsi untuk membalikkan isi array
-func balikkanArray(t *tabel, n int) {
-	for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
-		t.tab[i], t.tab[j] = t.tab[j], t.tab[i]
+// Fungsi untuk membalik isi array
+func balikanArray(t *tabel, n int) {
+	for i := 0; i < n/2; i++ {
+		t[i], t[n-1-i] = t[n-1-i], t[i]
 	}
 }
 
-// Fungsi untuk mengecek apakah array membentuk palindrom
+// Fungsi untuk mengecek apakah array adalah palindrom
 func palindrom(t tabel, n int) bool {
 	for i := 0; i < n/2; i++ {
-		if t.tab[i] != t.tab[n-i-1] {
+		if t[i] != t[n-1-i] {
 			return false
 		}
 	}
@@ -482,35 +533,37 @@ func main() {
 	var tab tabel
 	var n int
 
-	// Mengisi array dengan input dari user
+	// Memanggil fungsi isiArray
 	isiArray(&tab, &n)
 
-	// Menampilkan teks asli
+	// Cetak array asli
 	fmt.Print("Teks: ")
 	cetakArray(tab, n)
 
-	// Membalikkan array
-	balikkanArray(&tab, n)
+	// Membalik array
+	balikanArray(&tab, n)
 
-	// Menampilkan teks yang telah dibalik
+	// Cetak array yang telah dibalik
 	fmt.Print("Reverse teks: ")
 	cetakArray(tab, n)
 
-	// Mengecek apakah palindrom
+	// Mengecek apakah array adalah palindrom
 	if palindrom(tab, n) {
-		fmt.Println("Palindrom: true")
+		fmt.Println("Teks ini adalah palindrom.")
 	} else {
-		fmt.Println("Palindrom: false")
+		fmt.Println("Teks ini bukan palindrom.")
 	}
 }
+
 ```
-## Output: ![image](https://github.com/user-attachments/assets/ec011911-2f37-4af5-9303-459bfcb35059)
 
-Program ini membaca kumpulan karakter dari pengguna, mencetak teks aslinya, membalikkan urutannya, dan mengecek apakah teks tersebut adalah palindrom. Pengguna memasukkan karakter satu per satu, lalu program menampilkan hasil berupa teks asli, teks terbalik, dan status apakah teks itu palindrom (teks yang sama jika dibaca dari depan dan belakang). Program ini menggunakan logika sederhana untuk membalik teks dan memeriksa kondisi palindrom.
+## Output: ![Screenshot 2024-11-17 211047](https://github.com/user-attachments/assets/6e5ee8e9-f126-4c5a-a51a-e93a33f3abd0)
 
+Program ini meminta pengguna untuk memasukkan teks
+1. Membalik Teks: Program membalik urutan karakter dalam teks input, sehingga menampilkan teks terbalik.
+2 Mengecek Palindrom atua tidak: Program memeriksa apakah teks input adalah palindrom, yaitu teks yang sama baik dibaca maju maupun mundur.
 
 ## KESIMPULAN
-Tipe data bentukan, array, slice, dan map memberikan fleksibilitas dalam pengelolaan data di Go. Penggunaan struktur data yang tepat memungkinkan program menjadi lebih efisien dan terorganisir, terutama dalam mengelola data dengan ukuran dinamis atau data yang memiliki hubungan tertentu.
-
+Secara keseluruhan, program ini menggabungkan berbagai konsep pemrograman untuk menyelesaikan masalah yang berbeda, memberikan pengguna alat yang berguna untuk analisis geometris, manipulasi data, pencatatan hasil, dan pengolahan teks.
 
 
